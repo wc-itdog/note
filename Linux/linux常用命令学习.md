@@ -143,12 +143,14 @@ cp -r 主机ip:/opt/source  远程主机ip:/opt/destination
 
 ```shell
            源					  目的地
-rsycn -av 远程主机ip:/opt/source    /opt/destination
-rsycn -av /opt/source    远程主机ip:/opt/destination
+// 将IP(192.168.58.131)用户为admin的/opt/source文件夹  复制到本地的/opt/destination    
+rsycn -av admin@192.168.58.131:/opt/source    /opt/destination
+
+// 将本地的复制到远程
+rsycn -av /opt/source    admin@192.168.58.131:/opt/destination
 
 -a 归档拷贝  -v显示执行过程
-将 远程source 拷贝到 本地的destination
-但是只能有一个ip
+将 远程source 拷贝到 本地的destination , 不能拷贝俩远程.
 ```
 
 ### ln 
@@ -167,7 +169,6 @@ ln -s log2013.log link2013
 2. 硬链接文件除了文件名与源文件不一样，其余所有信息都是一样的。类似于 cp 复制操作。但是又和复制不一样，硬链接可以同步更新。
 ln log2013.log ln2013
 结果是三个文件
-
 
 `不允许将硬链接指向目录；不允许跨分区创建硬链接`
 ```
@@ -211,7 +212,7 @@ find /opt/bigdata/hadoop-2.7.7/etc/hadoop -name '*env.sh'
 	usr/bin/fdfs_trackerd 启动配置
 	etc/init.d/fdfs_trackerd 启动服务脚本
 	usr/include/fads   插件目录
-### 
+
 ### jdk8配置
 
 下载地址 我提供了 : 网盘链接  `链接: https://pan.baidu.com/s/1WV7xDa2UN6pOXVnLiSjP-g 提取码: 7yhk 复制这段内容后打开百度网盘手机App，操作更方便哦` 

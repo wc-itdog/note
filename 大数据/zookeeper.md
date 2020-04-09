@@ -46,7 +46,8 @@ dataDir=/opt/software/zookeeper-3.4.10/zkData
 关闭
 ./zkServer.sh  stop
 
-也可以建立 软连接  ls -s /opt/software/zookeeper-3.4.10/bin/zkServer.sh  /usr/bin/zkServer
+也可以建立 软连接  
+ln -s /opt/software/zk/zookeeper-3.4.10/bin/zkServer.sh  /usr/bin/zkServer
 ```
 
 - 集群搭建
@@ -432,6 +433,14 @@ public class ZookeeperApplicationListener implements ApplicationListener<Context
 ![](https://tyut.oss-cn-beijing.aliyuncs.com/image/2019-10-29/e770ea97-e960-4787-b62e-95c998009f05.png?x-oss-process=style/template01)
 
 
+
+## Zookeeper的选举机制
+
+文章 : [https://www.cnblogs.com/shuaiandjun/p/9383655.html](https://www.cnblogs.com/shuaiandjun/p/9383655.html)
+
+Zookeeper的Leader选举机制叫做 . FastLeaderElection
+
+其中 上诉说的可能是ZAB协议. 是分布式一致性算法. 
 
 
 
